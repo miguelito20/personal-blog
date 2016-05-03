@@ -11,4 +11,4 @@
 /log/*
 !/log/.keep
 /tmp
-/db/migrate/20160501175421_create_comments.rb
+
