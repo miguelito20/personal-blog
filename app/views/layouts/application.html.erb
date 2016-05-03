@@ -4,6 +4,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><%= content_for?(:title) ? yield(:title) : "My Site" %></title>
   <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "My Site" %>">
+  <meta name="author" content="Michael Lauer">
+  <meta name="site-name" content="milauer.com">
+  <meta name="content" content="blog computer science databases school work game design">
 
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
