@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12 col-sm-12 col-lg-12 title">
+      <h3><%= @article.title %></h3>
+    </div>
+    <div class="col-md-2 col-lg-2"></div>
+    <div class="col-md-8 col-sm-12 col-lg-8 article-full">
+      <p><%=raw @article.body %></p>
+    </div>
+    <div class="col-md-2 col-lg-2"></div>
+  </div>
+  <p class="navbutton">
+    <% if current_user.try(:admin?) %>
+        <%= link_to 'Edit', edit_article_path(@article), class: "btn btn-warning nav-link" %> |
+    <%end%>
+        <%= link_to 'Back', articles_path, class: "btn btn-info nav-link" %></p>
+  <div class="row">
+    <div class="col-md-12 col-sm-12 col-lg-12 title">
+      <h3>Comments</h3>
+    </div>
+    <div class="col-md-2 col-sm-2 col-lg-2">
+      <%= render partial: 'comments/form' %>
+    </div>
+
+    <% if @article.comments.any? %>
+    <div class="col-md-10 col-sm-10 col-lg-10 article-full">
+
+          <%= render @ac %>
+          <%= will_paginate @ac %>
+    </div>
+     <%end%>
+  </div>
+</div>
+

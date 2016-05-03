@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+<%= tinymce_assets %>
+<%= tinymce %>
+<h1 class="title">My Blog</h1>
+<% if current_user.try(:admin?) %>
+<p><%= link_to 'New Article', new_article_path, class: "btn btn-primary nav-link" %></p>
+<%end%>
+<div class="container-fluid">
+  <div class="row">
+    <% @articles.each do |article|%>
+    <div class="col-sm-4 col-md-4 col-lg-4"><%= link_to article, :class => "article-link" do %>
+      <h4><b><%= article.title %></b></h4>
+      <p><%=raw (article.body).truncate(250) %></p><%end%>
+      <% if current_user.try(:admin?) %>
+      <p class="navbutton"><%= link_to 'Edit', edit_article_path(article), class: "btn btn-warning nav-link" %>   <%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger nav-link" %></p>
+      <%end%>
+    </div>
+        <%end%>
+  </div>
+</div>
+<br>
