@@ -8,7 +8,7 @@
 <div class="container-fluid">
   <div class="row">
     <% @articles.each do |article|%>
-    <div class="col-sm-4 col-md-4 col-lg-4"><%= link_to article, :class => "article-link" do %>
+    <div class="col-sm-12 col-md-4 col-lg-4"><%= link_to article, :class => "article-link" do %>
       <h4><b><%= article.title %></b></h4>
       <p><%=raw (article.body).truncate(250) %></p><%end%>
       <% if current_user.try(:admin?) %>
