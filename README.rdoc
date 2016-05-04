@@ -1,27 +1,41 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This README covers some basic information about the application and then also goes through upcoming updates and different plans for additions to the site
 
-Things you may want to cover:
+== About the Application:
 
-* Ruby version
+* Ruby 2.3.0
 
-* System dependencies
+* Rails 4.2.5
 
-* Configuration
+* Runs off of Heroku - With Engine Puma
 
-* Database creation
+* If you take this application for your own use and reconfiguration, please remeber to change the meta tags to make your SEO
 
-* Database initialization
+* I use postgressql but it can work with MySQL etc. except for SQLite
 
-* How to run the test suite
+* To deploy to heroku, just push to heroku site's git then run rake db:migrate - the foreign keys for comments are set to load without pre- existing database tables. If you are to switch migrations for the comments to foriegn key entity instead of the belongs to entity then you will need to migrate the database without the comments migration and then add it after the tables it references to have been created
 
-* Services (job queues, cache servers, search engines, etc.)
+== Plans for Additions and Upgrades
 
-* Deployment instructions
+* Format the footer to react to larger screens to eliminate blank space at the bottom of page for pages that have minimal content
 
-* ...
+* Fix comment editing to stop creating new comments
+
+* Clean up Footer content
+
+* Add db to Resume to make it easier to expand resume content.
+
+* Add pictures to Articles?
+
+* Expand Account features
+    ** Profile Picture?
+    ** Edit Account
+    **
+
+* Contact Me page?
+
+* Profile alongside Resume? would include (Picture(s?), more indepth personal profile...
 
 
 Please feel free to use a different markup language if you do not plan to run
