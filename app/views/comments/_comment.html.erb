@@ -1,9 +1,14 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-12">
+      <h4><%= comment.title%></h4>
+      <p><%= comment.body%> -<%= comment.user.first_name %></p>
 
-<h4><%= comment.title%></h4>
-<p><%= comment.body%> -<%= comment.user.first_name %></p>
-
-<% if current_user.id == comment.user_id %>
-   <p> <%= link_to "Edit", edit_article_comment_path(comment.article_id, comment.id) %>    <%= link_to 'Destroy', [comment.article, comment],
-                method: :delete,
-                data: { confirm: 'Are you sure?' } %></p>
-<% end %>
+      <% if current_user.id == comment.user_id %>
+          <p> <%= link_to "Edit", edit_article_comment_path(comment.article_id, comment.id) %>    <%= link_to 'Destroy', [comment.article, comment],
+                                                                                                              method: :delete,
+                                                                                                              data: { confirm: 'Are you sure?' } %></p>
+      <% end %>
+    </div>
+  </div>
+</div>
