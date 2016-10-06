@@ -2,9 +2,10 @@ Rails.application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
   # You can have the root of your site routed with "root"
-  root 'welcome#index'
+  root 'articles#index'
   get 'static_pages/faq' => 'static_pages#faq', as: 'faq'
   get 'static_pages/resume'=> 'static_pages#resume', as: 'resume'
+  get 'welcome/index' =>  'welcome#index', as:'test'
   # devise_scope :user do
   #   get 'sign_in', to: 'users/sessions#new'
   #   get 'sign_up', to: 'users/registrations#new'
